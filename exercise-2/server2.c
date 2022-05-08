@@ -65,7 +65,7 @@ void handle_conn(int fd) {
  } s;
 
  s.fp = proc_buf; // Set s.fp to function proc_buf
- read(fd, &(s.nbytes), sizeof(s)); // Step 1
+ read(fd, &(s.nbytes), sizeof(s.nbytes)); // Step 1
  write(fd, "okay", 4+1); // Step 2
 
  size_t npages = s.nbytes/4096; // Pages to be received next

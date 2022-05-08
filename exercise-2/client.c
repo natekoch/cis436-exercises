@@ -13,7 +13,7 @@
 //#include <windows.h>
 #include <ctype.h>
 #include <unistd.h>
-#define PORT 5123  //hard-coded sever port number 
+#define PORT 5013  //hard-coded sever port number 
 #define hostAddress  "184.171.124.101" //hard-coded server IP address 
 
 int main(int argc, char *argv[]) { 
